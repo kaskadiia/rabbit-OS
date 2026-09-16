@@ -9,6 +9,8 @@ body {
 }
 
 .window{
+    display:flex;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
     top: 50%;
@@ -26,10 +28,12 @@ body {
 }
 
 .windowcontent{
-    width: 250px;
+    width: auto;
     height: auto;
-    overflow: scroll;
+    overflow-Y: scroll;
     resize: none;
+    margin-left: 16px;
+    margin-bottom: 16px;
     scrollbar-color: rgb(255, 255, 255) rgba(0, 0, 0, 0);
 }
 
