@@ -39,9 +39,10 @@ body {
 
 .windowtopbar{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     font-size: small;
-    align-items: center;;
+    align-items: center;
     color: white;
     flex-direction: row;
     background-color: rgba(255,255,255,0.1);
@@ -49,7 +50,7 @@ body {
 }
 
 .windowname{
-    margin-left: 16px;
+    text-align: center;
 }
 
 .closebutton{
@@ -124,6 +125,9 @@ body {
     filter: drop-shadow(0 0 8px black);
 }
 
+/*anims*/
+
+/*
 .music-anim {
     width: 500px;
     height: 500px;
@@ -136,10 +140,12 @@ body {
 
 @keyframes music-anim {
     from {
+        background-size: 50% auto;
         background-position: 0px 0;
     }
     to {
-        background-position: -1000px 0;
+        background-size: 50% auto;
+        background-position: calc(-1000px) 0;
     }
 }
 
@@ -174,3 +180,4 @@ body {
         transform: translate(calc(450px - 50%), calc(-820px + 50%)) rotate(360deg);
     }
 }
+*/
