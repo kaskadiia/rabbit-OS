@@ -57,7 +57,7 @@ function closeWindow(windowElement){
 };
 
 function openWindow(windowElement){
-    windowElement.style.display = "block"
+    windowElement.style.display = "flex"
 };
 
 function openable(windowName){

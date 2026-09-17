@@ -1,184 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>rabbitOS</title>
+        <link rel="icon" type="image/png" href="apps/welcome/Area_Moonlit_Pinnacle.png">
+    </head>
+
     <body>
-        <!--TOP BAR-->
-        <div id = "topbar" style = "display:flex; justify-content: space-between; margin: 16px; border-radius: 16px;
-        background-color: rgba(0,0,0,0.5);">
-            <div id = "landingopen"  style = "cursor: pointer; display:flex; justify-content: center; flex-direction: row;">
-                <img src = "apps/welcome/Area_Moonlit_Pinnacle.png" style = "height:50%; transform: translateY(50%)">
-                <h3 style = "margin-top: 24px">
-                    rabbitOS
-                </h3>
-            </div>
-            <h3 style = "margin-top: 24px">
-                STEEL YOURSELF!
-            </h3>
-            <div>
-                <p id = "timeElementA" style = "margin-right: 16px ; margin-top: 16px;">
-                    Time
-                </p>
-                <p id = "timeElementB" style = "margin-right: 16px; margin-top: -16px;">
-                    Date
-                </p>
+        <img class = "rabbit-image" src="startup/rabbits.png">
+        <div class = "window">
+            <h1>rabbitOS</h1>
+            <div style="display:flex; flex-direction: row; justify-content: center; align-items: center;">
+                <img src = "startup/lobby_charselect_anim.png" style = "height:32px; width: auto">
+                <a href="main.html" style = "color: rgb(44, 128, 255)">Start</a>
             </div>
         </div>
-        <!--APP BAR-->
-        <div id = "appbar" style = "position: absolute; bottom:0; left:0; right:0; padding-top: 8px; height: 64px;
-        display:flex; justify-content: center; flex-direction: row; text-align: center; margin-bottom: 16px; border-radius: 16px;
-        background-color: rgba(0,0,0,0.5); width:fit-content; transform: translateX(calc(50vw - 50%));">
-            <!--TIMER-->
-            <div>
-                <img src = "apps/timer/Clockwork_Tome.png" id = "timeropen" class = "app">
-                <p style="transform: translate(0,-24px);">Timer</p>
-            </div>
-            <!--MUSIC PLAYER-->
-            <div>
-                <img src = "apps/musicplayer/Sapphire_Violin.png" id = "musicopen" class = "app">
-                <p style="transform: translate(0,-24px);">Music</p>
-            </div>
-            <!--WIKI-->
-            <div>
-                <img src = "apps/wiki/Trinket_Floof_ball.png" id = "wikiopen" class = "app">
-                <p style="transform: translate(0,-24px);">Wiki</p>
-            </div>
-            <!--SYSTEM-->
-            <div>
-                <img src = "apps/system/Gear-icon.png" id = "systemopen" class = "app">
-                <p style="transform: translate(0,-24px);">System</p>
-            </div>
-        </div>
+        <div id = "filter" class = "filter"></div>
 
-         <!--LANDING-->
-        <div class = "window" id = "landing">
-            <div class = "windowtopbar" id = "landingtopbar">
-                <img src="apps/welcome/Area_Moonlit_Pinnacle.png" style="height: 32px;">
-                <p class = "windowname">Welcome</p>
-                <p class = "closebutton" id = "landingclose" >X</p>
-            </div>
-            <div class = "windowcontent">
-                <div>
-                    <h1>
-                        rabbitOS
-                    </h1>
-                    <h3>
-                        STEEL YOURSELF!
-                    </h3>
-                    <p>
-                        A <a href="https://store.steampowered.com/app/2132850/Rabbit_and_Steel/" style = "color: rgb(44, 128, 255)">Rabbit and Steel</a> themed WebOS.
-                    </p>
-                    <p>
-                        Rabbit and Steel is a roguelike/bullet hell game made by mino_dev.
-                    </p>
-                    <p>
-                        All art assets used in this WebOS are created by mino_dev.
-                    </p>
-                </div>
-                <img src = "apps/welcome/asha.png" style = "height:200px"></img>
-            </div>
-        </div>
-        <!--TIMER-->
-        <div class = "window" id = "timer" style = "display: none;">
-            <div class = "windowtopbar" id = "timertopbar">
-                <img src="apps/timer/Clockwork_Tome.png" style = "height: 30px;">
-                <p class = "windowname">Timer</p>
-                <p class = "closebutton" id = "timerclose" >X</p>
-            </div>
-            <div class = "windowcontent">
-                <div style="display: flex; flex-direction: row; justify-content: center;">
-                    <button id="startBtn" class="btn">Start</button>
-                    <button id="resetBtn" class="btn">Reset</button>
-                    <button id="pauseBtn" class="btn">Pause</button>
-                    <button id="timersetopen" class="btn">Set</button>
-                </div>
-                <div style="display: flex; flex-direction: row; justify-content: center;">
-                    <h3 id = "timerdisplay">05:00</h3>
-                </div>
-            </div>
-            <!--<p style = "display: flex; flex-direction: row; justify-content: center; transform: translateY(-32px);">The cosmos spins on my command.</p>-->
-            <!--<div style="display: flex; flex-direction: row; justify-content: center;">
-                <div class = "crow-anim" style = "transform: translateY(-20%);"></div>
-            </div>-->
-            <!--<img class = "spin-anim" src = "apps/timer/ring.png" style = "position: absolute; z-index: -2; width: 500px; height:auto">-->
-            <audio id="beep" src="apps/timer/sound_cooldown_finished_l.wav">
-            <audio id="clockwind" src="apps/timer/sound_bullet_warning.wav">
-        </div>
-        <div class = "window" id = "timerset" style = "width: 250px; height: 300px; display: none">
-            <div class = "windowtopbar" id = "timersettopbar">
-                <p class = "windowname">Set</p>
-                <p class = "closebutton" id = "timersetclose" >X</p>
-            </div>
-            <div style = "display:flex; justify-content: center; flex-direction: row;">
-                <div style = "display:flex; justify-content: center; flex-direction: column;">
-                    <div>
-                        <input class = "field" type="number" id="minuteInput" min="0" max="999" value="5">
-                        <label for = "minuteInput">min</label>
-                    </div>
-                    <div>
-                        <input class = "field" type="number" id="secondsInput" min="0" max="59" value="0">
-                        <label for = "secondsInput">sec</label>
-                    </div>
-                    <button id="setBtn" class="btn">Set</button>
-                </div>
-            </div>
-        </div>
-        <!--MUSIC PLAYER-->
-        <div class = "window" id = "music" style = "display: none;">
-            <div class = "windowtopbar" id = "musictopbar">
-                <img src="apps/musicplayer/Sapphire_Violin.png" style = "height:30px">
-                <p class = "windowname">Music Player</p>
-                <p class = "closebutton" id = "musicclose" >X</p>
-            </div>
-            <div class = "windowcontent">
-                <iframe data-testid="embed-iframe" style="border-radius:8px; width: 100%; height: 250px" src="https://open.spotify.com/embed/playlist/5F79oKOKyLAEJxwEOpNX6e?utm_source=generator&si=1f87031825f44cfb" width="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                <!--<div class = "music-anim"></div>-->
-            </div>
-        </div>
-        <!--WIKI-->
-        <div class = "window" id = "wiki" style = "display: none;">
-            <div class = "windowtopbar" id = "wikitopbar">
-                <img src="apps/wiki/Trinket_Floof_ball.png" style="height: 32px;">
-                <p class = "windowname">Fandom Wiki</p>
-                <p class = "closebutton" id = "wikiclose" >X</p>
-            </div>
-            <iframe src="https://rabbitandsteel.fandom.com/wiki/Rabbit_and_Steel_Wiki" style="width:100%; height:calc(100% - 48px)"></iframe>
-        </div>
-        <!--SYSTEM-->
-        <div class = "window" id = "system" style = "display:none">
-            <div class = "windowtopbar" id = "systemtopbar">
-                <img src="apps/system/Gear-icon.png" style="height: 32px;">
-                <p class = "windowname">System Settings</p>
-                <p class = "closebutton" id = "systemclose" >X</p>
-            </div>
-            <div class = "windowcontent">
-                <h3 style = >Background</h3>
-                <div style = "display: block;">
-                    <img id = "Kingdom_Outskirts" src = "apps/system/background-icons/Kingdom_Outskirts.png" style = "cursor: pointer">
-                    <img id = "Scholars_Nest" src = "apps/system/background-icons/Scholars_Nest.png" style = "cursor: pointer">
-                    <img id = "Kings_Arsenal" src = "apps/system/background-icons/Kings_Arsenal.png" style = "cursor: pointer">
-                    <img id = "Red_Darkhouse" src = "apps/system/background-icons/Red_Darkhouse.png" style = "cursor: pointer">
-                    <img id = "Churchmouse_Streets" src = "apps/system/background-icons/Churchmouse_Streets.png" style = "cursor: pointer">
-                    <img id = "Emerald_Lakeside" src = "apps/system/background-icons/Emerald_Lakeside.png" style = "cursor: pointer">
-                    <img id = "The_Pale_Keep" src = "apps/system/background-icons/The_Pale_Keep.png" style = "cursor: pointer">
-                    <img id = "Moonlit_Pinnacle" src = "apps/system/background-icons/Moonlit_Pinnacle.png" style = "cursor: pointer">
-                    <img id = "Crack_In_The_Geode" src = "apps/system/background-icons/Crack_In_The_Geode.png" style = "cursor: pointer; width: 52px">
-                    <img id = "Darkhouse_Depths" src = "apps/system/background-icons/Darkhouse_Depths.png" style = "cursor: pointer; width: 52px">
-                    <img id = "Atelier_Aurum" src = "apps/system/background-icons/Atelier_Aurum.png" style = "cursor: pointer; width: 52px">
-                    <img id = "Subterra_Sanctum" src = "apps/system/background-icons/Subterra_Sanctum.png" style = "cursor: pointer; width: 52px">
-                    <img id = "Looping_Hallway" src = "apps/system/background-icons/Looping_Hallway.png" style = "cursor: pointer; width: 52px">
-                    <img id = "Reflecting_Pool" src = "apps/system/background-icons/Reflecting_Pool.png" style = "cursor: pointer; width: 52px">
-                </div>
-                <h3>Settings</h3>
-                <div style = "display: block;">
-                    <p id="blur" style = "cursor: pointer">Blur: On</p>
-                </div>
-                <div style = "display: block;">
-                    <p id="dropshadow" style = "cursor: pointer">Drop Shadow: On</p>
-                </div>
-            </div>
-        </div>
-
-        <script src = "script.js"></script>
-        <link rel = "stylesheet" type = "text/css" href = "style.css"/>
+        <audio id="startup" src="startup/startup.ogg"></audio>
+        <script src="startup/startup.js"></script>
+        <link rel = "stylesheet" type = "text/css" href = "startup.css"/>
     </body>
 </html>
 
